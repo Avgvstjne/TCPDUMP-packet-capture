@@ -1,8 +1,10 @@
 # TCPDUMP-packet-capture
 ---
 
-[Lab video_TCPDUMP packet capture](https://youtu.be/YMm08l1yKA0)
+# [Lab video_TCPDUMP packet capture](https://youtu.be/YMm08l1yKA0)
 
+---
+[View TCPDUMP and WIRESHARK comparison diagram](./docs/TCPDUMP-WIRESHARK_comparison_diagram.pdf)
 ---
 Using tcpdump to capture and analyze live network traffic from a Linux virtual machine. Starting with the user account 'analyst'.
 
