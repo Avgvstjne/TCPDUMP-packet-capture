@@ -10,9 +10,9 @@ Using tcpdump to capture and analyze live network traffic from a Linux virtual m
 
 Walkthrough:
 
-Firstly; I identified the network interfaces to capture network packet data. The Ethernet network interface is identified by the entry with the eth prefix.
+Firstly, I identified the network interfaces to capture network packet data. The Ethernet network interface is identified by the entry with the eth prefix.
 
-Secondly; I used tcpdump to filter live network traffic, this command will run tcpdump with the following options:
+Secondly, I used tcpdump to filter live network traffic, this command will run tcpdump with the following options:
 
    -i eth0: _Capture data specifically from the eth0 interface_.  
    -v: _Display detailed packet data_.  
@@ -28,7 +28,7 @@ The remaining data filters the header data for the inner TCP packet.
 The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data.  
 The next field is the TCP checksum value, which is used for detecting errors in the data.
 
-Thirdly; Capture network traffic using tcpdump, the command runs tcpdump in the background with the following options:
+Thirdly, Capture network traffic using tcpdump, the command runs tcpdump in the background with the following options:
 
    -i eth0: _Capture data from the eth0 interface_.  
    -nn: _Do not attempt to resolve IP addresses or ports to names. This is best practice from a security perspective, as the lookup data may not be valid. It also prevents malicious actors from being alerted to an investigation_  
@@ -39,12 +39,12 @@ Thirdly; Capture network traffic using tcpdump, the command runs tcpdump in the 
 Next I used curl to generate some HTTP (port 80) traffic.  
 Then verified that the packet data has been captured.
 
-Finally: I used the tcpdump command to filter the packet header data from the capture.pcap capture file. I ran the command with the following options:
+Finally, I used the tcpdump command to filter the packet header data from the capture.pcap capture file. I ran the command with the following options:
 
    -nn: _Disable port and protocol name lookup_.  
    -r: _Read capture data from the named file_.  
    -v: _Display detailed packet data_.
 
 The -nn switch was specified again here, as we want to make sure tcpdump does not perform name lookups of either IP addresses or ports, since this can alert threat actors.
-Furthermore, I used the tcpdump command to filter the extended packet data from the capture.pcap capture file with one other option.  
+Also, I used the tcpdump command to filter the extended packet data from the capture.pcap capture file with one other option.  
    -X: _Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis_.
